@@ -134,4 +134,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR)
 import django_heroku
 django_heroku.settings(locals())
 
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+if os.environ.get('DEBUG') == 'TRUE':
+    DEBUG = True
+elif os.environ.get('DEBUG') == 'FALSE':
+    DEBUG = False
