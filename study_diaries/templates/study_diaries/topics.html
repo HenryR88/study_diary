@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subjects/Topics</title>
+</head>
+<body>
+    {% extends "study_diaries/base.html" %}
+
+    {% block page_header %}
+        <h2>Subjects/Topics</h2>
+    {% endblock page_header %}
+
+    {% block content %}
+        <ul>
+            {% for topic in topics %}
+                <li>
+                    <a href="{% url 'study_diaries:topic' topic.id %}">{{ topic }}</a>
+                </li>
+            {% empty %}
+            <li>No subjects/topics have been added yet.</li>
+            {% endfor %}
+        </ul>
+
+    <p><a href="{% url 'study_diaries:new_topic' %}">Add a news subject/topic</a></p>
+    {% endblock content %}
+</body>
+</html>

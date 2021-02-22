@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subject/Topic</title>
+</head>
+<body>
+    {% extends 'study_diaries/base.html' %}
+    {% load filename %}
+
+    {% block page_header %}
+        <h4>{{ topic }}</h4>
+    {% endblock page_header %}
+
+    {% block content %}
+        <p>
+            <a href="{% url 'study_diaries:new_entry' topic.id %}">Add new entry</a>
+        </p>
+        {% for entry in entries %}
+            <div class="card mb-3">
+                <p class="card-header">
+                {{ entry.date_added|date:'M d, Y H:i' }}
+                <small><a href="{% url 'study_diaries:edit_entry' entry.id %}">Edit entry </a>
+                </small>
+                </p>
+                <p>{{ entry.text|linebreaks }}</p>
+            </div>
+            <p><a href="/{{ entry.file }}" target="_blank">Attachment: {{ entry.file|filename }}</a></p>
+        {% empty %}
+            <p>There are not entries for this Subject/Topic yet.</p>
+        {% endfor %}
+        </ul>
+        <form action="{% url 'study_diaries:delete_topic' topic.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete Subject / Topic">
+        </form>
+
+    {% endblock content %}
+</body>
+</html>

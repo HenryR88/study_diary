@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+  {% extends "study_diaries/base.html" %}
+  {% block page_header %}
+    <div class="jumbotron">
+        <h2 class="display-4">Keep notes on subjects you're studying.</h2>
+
+        <p class="lead">This webapp helps you to keep track of your study progress,
+            for any subject you're interested in or currently studying.</p>
+
+        <a class="btn btn-success btn-lg" href="{% url 'users:register' %}"
+           role="button">Register &raquo;</a>
+    </div>
+{% endblock page_header %}
+</body>
+
+</html>
