@@ -10,7 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa978d97-e5ba-4ffb-be64-905b78fa4c68" name="Default Changelist" comment="" />
+    <list default="true" id="aa978d97-e5ba-4ffb-be64-905b78fa4c68" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/study_diary/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/study_diary/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
