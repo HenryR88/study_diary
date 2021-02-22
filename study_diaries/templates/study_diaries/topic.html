@@ -6,7 +6,6 @@
 </head>
 <body>
     {% extends 'study_diaries/base.html' %}
-    {% load filename %}
 
     {% block page_header %}
         <h4>{{ topic }}</h4>
@@ -25,7 +24,7 @@
                 </p>
                 <p>{{ entry.text|linebreaks }}</p>
             </div>
-            <p><a href="/{{ entry.file }}" target="_blank">{{ entry.file|filename }}</a></p>
+            <p><a href="/{{ entry.file }}" target="_blank">{{ entry.file }}</a></p>
         {% empty %}
             <p>There are not entries for this Subject/Topic yet.</p>
         {% endfor %}
