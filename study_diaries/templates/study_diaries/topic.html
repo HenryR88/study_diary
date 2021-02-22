@@ -24,7 +24,7 @@
                 </p>
                 <p>{{ entry.text|linebreaks }}</p>
             </div>
-            <p><a href="/{{ entry.file }}" target="_blank">Attachment: {{ entry.file }}</a></p>
+            <p><a href="/{{ entry.file }}" target="_blank">{{ entry.file }}</a></p>
         {% empty %}
             <p>There are not entries for this Subject/Topic yet.</p>
         {% endfor %}
