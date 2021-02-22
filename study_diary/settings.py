@@ -25,7 +25,7 @@ SECRET_KEY = '9rj9b26bji4s8i^yu1ejxce5fdco)me&%kdb%0ed$4bkote&jn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -64,7 +64,7 @@ ROOT_URLCONF = 'study_diary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,7 +134,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR)
 import django_heroku
 django_heroku.settings(locals())
 
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = False
